@@ -14,8 +14,13 @@ const MON_STRS = [
   'Dec'
 ]
 
-export const formatDateDay = (date) =>
-  `${DAY_STRS[date.getDay()]}, ${MON_STRS[date.getMonth()]} ${date.getDate()}`
+export const formatDateDay = (dateStr) => {
+  const [year, month, day] = dateStr.split('-')
+  const date = new Date()
+  date.setMonth(Number(month) - 1)
+  date.setDate(Number(day))
+  return `${DAY_STRS[date.getDay()]}, ${MON_STRS[date.getMonth()]} ${date.getDate()}`
+}
 
 export const formatDate = (date) =>
   `${MON_STRS[date.getMonth()]} ${date.getDate()} ${date.getHours()}:${(date.getMinutes() < 10 ? '0' : '') + date.getMinutes()}`

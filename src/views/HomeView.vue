@@ -55,7 +55,7 @@ selectCity(citiesStore.selectedCityId)
                 <img :src="`https://openweathermap.org/img/wn/${today.icon}@2x.png`" />
               </div>
               <div class="date">
-                <div>{{ formatDateDay(new Date(today.date)) }}</div>
+                <div>{{ formatDateDay(today.date) }}</div>
                 <div>{{ today.description }}</div>
               </div>
               <div class="temp">{{ toF(today.high) }}°</div>
