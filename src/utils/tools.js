@@ -18,7 +18,7 @@ export const formatDateDay = (date) =>
   `${DAY_STRS[date.getDay()]}, ${MON_STRS[date.getMonth()]} ${date.getDate()}`
 
 export const formatDate = (date) =>
-  `${MON_STRS[date.getMonth()]} ${date.getDate()} ${date.getHours()}:${date.getMinutes()}`
+  `${MON_STRS[date.getMonth()]} ${date.getDate()} ${date.getHours()}:${(date.getMinutes() < 10 ? '0' : '') + date.getMinutes()}`
 
 export const formatDateHour = (date) =>
   date.toLocaleString('en-US', {
